@@ -60,4 +60,4 @@ pip install gTTS
 
 ### Author <a href="https://github.com/peh3k">peh3k</a>
 
-[⬆ Voltar ao topo](#Vocab Decorator)<br>
+[⬆ Voltar ao topo](#VocabDecorator)<br>
