@@ -1,0 +1,123 @@
+<MainApp@MDApp>
+#:import Snackbar kivymd.uix.snackbar.Snackbar
+
+MDFloatLayout:
+    
+    
+
+    MDBottomNavigation:
+        text_color_active: "teal"
+        MDBottomNavigationItem:
+            id: mobo
+            name: 'screen 1'
+            text: 'Easy'
+            icon: 'baby-bottle'
+            on_tab_press: app.easy()
+        
+
+            
+
+        MDBottomNavigationItem:
+            name: 'screen 2'
+            text: 'Medium'
+            icon: 'dumbbell'
+            on_tab_press: app.medium()
+        
+            
+
+            
+
+        MDBottomNavigationItem:
+            name: 'screen 3'
+            text: 'Hard'
+            icon: "axe-battle"
+            on_tab_press: app.hard()
+        
+            
+
+            
+
+    MDCard:
+        md_bg_color: 0,0,0,0.05
+        size_hint: 0.8, 0.4
+        pos_hint: {'center_x': .5, 'center_y': .6} 
+        MDRaisedButton:
+            text: "ENVIAR"
+            elevation: 2
+            size_hint_x: 0.7
+            on_press: app.word_verification()
+        
+    MDLabel:
+        id: label
+        text: ' '
+        halign: "center"
+        pos_hint: {'center_y': .65}
+        font_style: "H5"
+        bold: True 
+        
+        
+         
+    MDLabel:
+        id: acerto
+        text: ' '
+        halign: "center"
+        pos_hint: {'center_y': .75}
+        font_style: "H5"
+        bold: True 
+        theme_text_color: "Custom"
+        text_color: 0,128,0,1  
+    MDLabel:
+        id: erro
+        text: ' '
+        halign: "center"
+        pos_hint: {'center_y': .75}
+        font_style: "H5"
+        bold: True 
+        theme_text_color: "Custom"
+        text_color: 25,0,0,1 
+        
+        
+        
+        
+    MDTextField:
+        id: input
+        hint_text: "Escreva em Português"
+        mode: "fill"
+        size_hint_x: .8
+        pos_hint: {'center_x': .5, 'center_y': .51}
+        fill_color_normal: 0,0,0,0.1
+        height: "10dp"
+        
+
+    MDFloatingActionButton:
+        icon: "volume-high"
+        md_bg_color: app.theme_cls.primary_color
+        elevation: 2
+        pos_hint: {'center_x': .2, 'center_y': .3}
+        on_press: app.init_audio()
+         
+        
+
+    MDFloatingActionButton:
+        icon: "autorenew"
+        md_bg_color: app.theme_cls.primary_color
+        elevation: 2
+        pos_hint: {'center_x': .5, 'center_y': .3}
+        on_press: app.gen_word()
+        
+        
+    
+    MDFloatingActionButton:
+        icon: "book-open-page-variant-outline"
+        md_bg_color: app.theme_cls.primary_color
+        elevation: 2
+        pos_hint: {'center_x': .8, 'center_y': .3}
+        on_release: Snackbar(text=app.translate(), snackbar_y= 480, size_hint_x=.4, elevation=0, bg_color = "teal", radius= [15,15,15,15], snackbar_animation_dir="Left").open()
+    
+        
+
+        
+
+        
+
+    
